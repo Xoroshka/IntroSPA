@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { router_entrys }  from './router-entrys';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  router_entrys = router_entrys;
+
   title = 'IntroSPA';
 }

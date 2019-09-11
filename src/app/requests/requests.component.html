@@ -1,0 +1,48 @@
+<mat-toolbar>
+    <input type="text" placeholder="Введите Фамилию, Статус, Приоритет, Тег и т.д. чтобы найти заявки">
+</mat-toolbar>
+
+<mat-drawer-container hasBackdrop="false">
+
+    <mat-drawer-content>
+
+        <button mat-flat-button class="add_request" (click)="testprior()">Создать заявку</button>
+        
+        <mat-table [dataSource]="tasks">
+
+            <ng-container matColumnDef="priority">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let task"><div [ngStyle]='{"background-color":getPriorityRGB(task.priorityId)}'></div></mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{task.id}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Название </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{task.name}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef> Статус </mat-header-cell>
+                <mat-cell *matCellDef="let task"><div [ngStyle]='{"background-color": task.statusRgb}'>{{task.statusName}}</div></mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="executorName">
+                <mat-header-cell *matHeaderCellDef> Исполнитель </mat-header-cell>
+                <mat-cell *matCellDef="let task"> {{task.executorName}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="['priority', 'id', 'name', 'status', 'executorName']; sticky: true"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['priority', 'id', 'name', 'status', 'executorName']"></mat-row>
+        </mat-table>
+
+    </mat-drawer-content>
+
+    <mat-drawer mode="over" position="end" opened>
+        Lorem
+    </mat-drawer>
+
+</mat-drawer-container>
