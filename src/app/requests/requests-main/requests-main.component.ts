@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { tasksODataService } from '../http/tasksOData.service';
-import { taskModel } from '../models/task.model';
-import { priorityModel } from '../models/priority.model';
-import { prioritiesService } from '../http/priorities.service';
+import { Component, OnInit} from '@angular/core';
+import { tasksODataService } from '../../http/tasksOData.service';
+import { taskModel } from '../../models/task.model';
+import { priorityModel } from '../../models/priority.model';
+import { prioritiesService } from '../../http/priorities.service';
 
 @Component({
-  selector: 'app-requests',
-  templateUrl: './requests.component.html',
-  styleUrls: ['./requests.component.scss'],
+  selector: 'app-requests-main',
+  templateUrl: './requests-main.component.html',
+  styleUrls: ['./requests-main.component.scss'],
   providers: [tasksODataService, prioritiesService]
 })
-export class RequestsComponent implements OnInit {
+export class RequestsMainComponent implements OnInit {
 
   tasks: taskModel[] = [];
 
