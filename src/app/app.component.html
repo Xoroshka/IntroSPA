@@ -1,22 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-sidenav-container>
+<div class="menubox">
+    <div class="menu" role="menu">
 
-  <mat-sidenav mode="side" opened disableClose>
+        <img class="logo" role="" src="/assets/images/logo.png" alt="logo">
 
-      <img class="logo" src="/assets/images/logo.png" alt="logo">
+        <a *ngFor="let entry of router_entrys" [routerLink]="[entry.path]" routerLinkActive="menu-active-item">
+            <img src="/assets/images/{{entry.icon}}">
+            <p>{{entry.name}}</p>
+        </a>
 
-      <mat-nav-list>
-            <a *ngFor="let entry of router_entrys" [routerLink]="[entry.path]" routerLinkActive="active-router-entry">
-                <img src="/assets/images/{{entry.icon}}">
-                <p>{{entry.name}}</p>
-            </a>
-      </mat-nav-list>
-  </mat-sidenav>
+    </div>
+</div>
 
-
-
-  <mat-sidenav-content>
-      <router-outlet></router-outlet>
-  </mat-sidenav-content>
-
-</mat-sidenav-container>
+<div class="main" role="main">
+    <router-outlet></router-outlet>
+</div>

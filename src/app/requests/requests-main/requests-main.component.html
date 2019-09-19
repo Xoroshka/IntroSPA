@@ -1,48 +1,54 @@
-<mat-toolbar>
+<div class="search">
     <input type="text" placeholder="Введите Фамилию, Статус, Приоритет, Тег и т.д. чтобы найти заявки">
-</mat-toolbar>
+</div>
 
-<mat-drawer-container hasBackdrop="false">
+<div class="container">
 
-    <mat-drawer-content>
+    <div class="content">
 
-        <button mat-flat-button class="add_request" routerLink="/requests/add">Создать заявку</button>
-        
-        <mat-table [dataSource]="tasks">
+        <button class="add_request" routerLink="/requests/add">Создать заявку</button>
 
-            <ng-container matColumnDef="priority">
-                <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                <mat-cell *matCellDef="let task"><div [ngStyle]='{"background-color":getPriorityRGB(task.priorityId)}'></div></mat-cell>
-            </ng-container>
-        
-            <ng-container matColumnDef="id">
-                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-                <mat-cell *matCellDef="let task"> {{task.id}} </mat-cell>
-            </ng-container>
-        
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Название </mat-header-cell>
-                <mat-cell *matCellDef="let task"> {{task.name}} </mat-cell>
-            </ng-container>
-        
-            <ng-container matColumnDef="status">
-                <mat-header-cell *matHeaderCellDef> Статус </mat-header-cell>
-                <mat-cell *matCellDef="let task"><div [ngStyle]='{"background-color": task.statusRgb}'>{{task.statusName}}</div></mat-cell>
-            </ng-container>
-        
-            <ng-container matColumnDef="executorName">
-                <mat-header-cell *matHeaderCellDef> Исполнитель </mat-header-cell>
-                <mat-cell *matCellDef="let task"> {{task.executorName}} </mat-cell>
+        <cdk-table [dataSource]="tasks">
+
+            <ng-container cdkColumnDef="priority">
+                <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
+                <cdk-cell *cdkCellDef="let task">
+                    <div [ngStyle]='{"background-color":getPriorityRGB(task.priorityId)}'></div>
+                </cdk-cell>
             </ng-container>
 
-            <mat-header-row *matHeaderRowDef="['priority', 'id', 'name', 'status', 'executorName']; sticky: true"></mat-header-row>
-            <mat-row *matRowDef="let request; columns: ['priority', 'id', 'name', 'status', 'executorName']" [routerLink]="['/requests/edit', request.id]"></mat-row>
-        </mat-table>
+            <ng-container cdkColumnDef="id">
+                <cdk-header-cell *cdkHeaderCellDef> ID </cdk-header-cell>
+                <cdk-cell *cdkCellDef="let task"> {{task.id}} </cdk-cell>
+            </ng-container>
 
-    </mat-drawer-content>
+            <ng-container cdkColumnDef="name">
+                <cdk-header-cell *cdkHeaderCellDef> Название </cdk-header-cell>
+                <cdk-cell *cdkCellDef="let task"> {{task.name}} </cdk-cell>
+            </ng-container>
 
-    <mat-drawer mode="over" position="end" opened>
+            <ng-container cdkColumnDef="status">
+                <cdk-header-cell *cdkHeaderCellDef> Статус </cdk-header-cell>
+                <cdk-cell *cdkCellDef="let task">
+                    <div [ngStyle]='{"background-color": task.statusRgb}'>{{task.statusName}}</div>
+                </cdk-cell>
+            </ng-container>
+
+            <ng-container cdkColumnDef="executorName">
+                <cdk-header-cell *cdkHeaderCellDef> Исполнитель </cdk-header-cell>
+                <cdk-cell *cdkCellDef="let task"> {{task.executorName}} </cdk-cell>
+            </ng-container>
+
+            <cdk-header-row *cdkHeaderRowDef="['priority', 'id', 'name', 'status', 'executorName']; sticky: true">
+            </cdk-header-row>
+            <cdk-row *cdkRowDef="let request; columns: ['priority', 'id', 'name', 'status', 'executorName']"
+                [routerLink]="['/requests/edit', request.id]"></cdk-row>
+        </cdk-table>
+
+    </div>
+
+    <div class="router_box">
         <router-outlet></router-outlet>
-    </mat-drawer>
+    </div>
 
-</mat-drawer-container>
+</div>

@@ -1,58 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100&subset=cyrillic&display=swap');
+$menu_width: 95px;
+$menu_color: #002137;
+$menu_active_item_color: #002c49;
 
-
-mat-sidenav-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    &.mat-drawer-container{
-        background-color: white;
-    }
+.menubox {
+  height: 100vh;
+  overflow: hidden;
+  width: $menu_width;
 }
 
-mat-sidenav {
-    background-color: #002137;
-    width: 95px;
-    color: white;
-    
-}
-
-.logo {
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $menu_color;
+  width: $menu_width + 50px;
+  height: 100vh;
+  // min-height: 500px;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  > img {
     padding: 0px;
-    margin: 16px 17px 20px 25px;
-}
-
-mat-nav-list{
-    padding: 0px;
-}
-
-mat-nav-list a {
+    // margin: 16px 17px 20px 25px;
+    margin: 18px 21px;
+    position: relative;
+    bottom: 2px;
+    left: 4px;
+  }
+  a {
     display: block;
     position: relative;
-    width: 100%;
+    width: $menu_width;
     height: 70px;
     text-decoration: none;
-    color: white;
+    color: inherit;
     font-size: 12px;
     font-family: Roboto, sans-serif;
     font-weight: 200;
     & * {
-        left: 50%;
-        transform: translate(-50%, 0%);
-        position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      position: absolute;
     }
     & p {
-        white-space: nowrap;
-        bottom: 14px;
+      white-space: nowrap;
+      bottom: 14px;
     }
     & img {
-        bottom: 34px;
+      bottom: 34px;
     }
-    
+  }
 }
 
-.active-router-entry {
-    background-color: #002c49;
+.menu-active-item {
+  background-color: $menu_active_item_color;
+}
+
+.main {
+  position: absolute;
+  height: 100vh;
+  left: $menu_width;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: white;
 }

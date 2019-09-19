@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { router_entrys }  from './router-entrys';
+import { router_entrys } from './router-entrys';
 
 
 @Component({

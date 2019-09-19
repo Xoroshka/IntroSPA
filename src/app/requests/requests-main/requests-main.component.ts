@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { tasksODataService } from '../../http/tasksOData.service';
 import { taskModel } from '../../models/task.model';
 import { priorityModel } from '../../models/priority.model';
@@ -19,16 +19,16 @@ export class RequestsMainComponent implements OnInit {
   constructor(
     private tasksODataService: tasksODataService,
     private prioritiesService: prioritiesService,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.tasksODataService.getTasksOData()
-      .subscribe((data:taskModel[]) => this.tasks = data["value"]);
+      .subscribe((data: taskModel[]) => this.tasks = data["value"]);
     this.prioritiesService.getPriorities()
-      .subscribe((data:priorityModel[]) => this.priorities = data);
+      .subscribe((data: priorityModel[]) => this.priorities = data);
   }
-  getPriorityRGB(id: number):string {
-    return(this.priorities.find(x => x.id == id).rgb);
+  getPriorityRGB(id: number): string {
+    return (this.priorities.find(x => x.id == id).rgb);
   }
 
 }

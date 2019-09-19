@@ -1,9 +1,9 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RequestsMainComponent }  from './requests-main/requests-main.component';
-import { RequestsAddComponent }   from './requests-add/requests-add.component';
-import { RequestsEditComponent }  from './requests-edit/requests-edit.component';
+import { RequestsMainComponent } from './requests-main/requests-main.component';
+import { RequestsAddComponent } from './requests-add/requests-add.component';
+import { RequestsEditComponent } from './requests-edit/requests-edit.component';
 
 // import { CanDeactivateGuard }             from '../can-deactivate.guard';
 // import { CrisisDetailResolverService }    from './crisis-detail-resolver.service';
