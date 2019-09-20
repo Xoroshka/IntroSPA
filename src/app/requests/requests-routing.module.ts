@@ -16,6 +16,7 @@ const requestsRoutes: Routes = [
       {
         path: 'add',
         component: RequestsAddComponent,
+        data: {open: 1,},
         // canDeactivate: [CanDeactivateGuard],
         // resolve: {
         //   crisis: CrisisDetailResolverService
@@ -23,7 +24,8 @@ const requestsRoutes: Routes = [
       },
       {
         path: 'edit/:id',
-        component: RequestsEditComponent
+        component: RequestsEditComponent,
+        data: {open: 1,},
       }
     ]
   }

@@ -1,3 +1,11 @@
-<p>
-  requests-add works!
-</p>
+<div class="head">
+  <h1>Новая заявка</h1>
+</div>
+
+<div class="container">
+  <p>Название</p>
+  <textarea class="name" #name_area (keyup)="name=name_area.value"></textarea>
+  <p>Описание</p>
+  <textarea class="description" #description_area (keyup)="description=description_area.value"></textarea>
+  <button class="save" (click)="post(); name_area.value=''; description_area.value=''">Сохранить</button>
+</div>

@@ -1,0 +1,24 @@
+@mixin btn($width, $height) {
+    color: white;
+    background-color: #008cf0;
+    width: $width;
+    height: $height;
+    border-radius: $height/2;
+    padding: 0px $height/2;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    overflow: visible;
+  }

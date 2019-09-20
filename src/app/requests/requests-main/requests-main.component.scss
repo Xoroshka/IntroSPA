@@ -1,27 +1,4 @@
-@mixin btn($width, $height) {
-  color: white;
-  background-color: #008cf0;
-  width: $width;
-  height: $height;
-  border-radius: $height/2;
-  padding: 0px $height/2;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  outline: 0;
-  border: none;
-  -webkit-tap-highlight-color: transparent;
-  display: inline-block;
-  white-space: nowrap;
-  text-decoration: none;
-  vertical-align: baseline;
-  text-align: center;
-  overflow: visible;
-}
+@import '../requests-style.scss';
 
 .search {
   background-color: #d1e0ed;
@@ -175,8 +152,16 @@ cdk-cell {
 }
 
 .router_box {
-  width: 20vw;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: #ecf3f7;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 975px;
+    z-index: 150;
+  
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   border: 1px solid #eef1f4;
-  visibility: hidden;
+
 }
