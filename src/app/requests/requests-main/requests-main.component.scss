@@ -44,8 +44,9 @@
   overflow: hidden;
 }
 
-.content {
+.content, .router_box {
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
 }
 
@@ -160,8 +161,8 @@ cdk-cell {
     bottom: 0;
     width: 975px;
     z-index: 150;
-  
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  border: 1px solid #eef1f4;
-
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgb(215, 220, 224);;
 }
+
+

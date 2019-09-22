@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+
+
+import { taskModel } from '../requests.model';
+import { RequestsService } from '../requests.service';
+import { async } from 'q';
 
 @Component({
   selector: 'app-requests-edit',
@@ -7,9 +14,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestsEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: RequestsService,
+  ) { }
+  private task: taskModel;
 
   ngOnInit() {
+    // this.task = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) =>
+    //     ( this.service.getTask(params.get('id'))| async ))
   }
+
 
 }

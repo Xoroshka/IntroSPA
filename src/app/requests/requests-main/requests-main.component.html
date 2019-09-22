@@ -8,7 +8,7 @@
 
         <button class="add_request" routerLink="/requests/add">Создать заявку</button>
 
-        <cdk-table [dataSource]="tasks">
+        <cdk-table [dataSource]="tasks$| async">
 
             <ng-container cdkColumnDef="priority">
                 <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>

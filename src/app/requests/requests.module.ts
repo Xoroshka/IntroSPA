@@ -8,6 +8,7 @@ import { RequestsAddComponent } from './requests-add/requests-add.component';
 import { RequestsEditComponent } from './requests-edit/requests-edit.component';
 
 import { RequestsRoutingModule } from './requests-routing.module';
+import { RequestsService } from './requests.service';
 
 @NgModule({
   imports: [
@@ -16,11 +17,12 @@ import { RequestsRoutingModule } from './requests-routing.module';
     BrowserAnimationsModule,
     CdkTableModule,
   ],
+  providers: [RequestsService],
   declarations: [
     RequestsMainComponent,
     RequestsAddComponent,
     RequestsEditComponent
-  ]
+  ],
 })
 
 
