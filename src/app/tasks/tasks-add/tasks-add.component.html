@@ -1,13 +1,12 @@
 <div class="head">
   <h1>Новая заявка</h1>
-  <button routerLink="/requests"><img src="/assets/images/close.png"></button>
+  <button routerLink="/tasks"><img src="/assets/images/close.png"></button>
 </div>
 
 <div class="container">
-  <p>Название</p>
+  <label>Название</label>
   <textarea class="name" #name_area (keyup)="name=name_area.value"></textarea>
-  <p>Описание</p>
+  <label>Описание</label>
   <textarea class="description" #description_area (keyup)="description=description_area.value"></textarea>
   <button class="save" (click)="post(); name_area.value=''; description_area.value=''">Сохранить</button>
-  id: {{id}}
 </div>

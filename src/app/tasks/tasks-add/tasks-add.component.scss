@@ -1,0 +1,81 @@
+@import "../tasks-style.scss";
+
+.head {
+	height: 60px;
+	font-family: Myriad Pro, serif;
+	font-size: 18px;
+	background-color: #18436f;
+	color: white;
+	padding: 0 31px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	h1 {
+		padding-left: 5px;
+	}
+	button {
+		padding: 0;
+		top: auto;
+		bottom: auto;
+		border-bottom-width: 0;
+		box-sizing: border-box;
+		position: relative;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		outline: 0;
+		border: none;
+		-webkit-tap-highlight-color: transparent;
+		display: inline-block;
+		overflow: visible;
+		background: none;
+		vertical-align: baseline;
+		img {
+			vertical-align: middle;
+		}
+	}
+}
+
+.container {
+	margin: 50px 37px;
+	display: flex;
+	flex-direction: column;
+	& label {
+		margin: 16px 5px;
+		font-size: 14px;
+		font-family: "Ubuntu";
+		color: rgb(159, 158, 167);
+		line-height: 1.714;
+	}
+	& textarea {
+		overflow: auto;
+		width: 625px;
+		border: 1px solid #e8e8e8;
+		border-radius: 5px;
+		background-color: rgb(249, 249, 250);
+		resize: none;
+		outline: none;
+	}
+	.name {
+		height: 85px;
+	}
+	.description {
+		height: 134px;
+	}
+	.save {
+		@include btn(150px, 36px);
+		font: {
+			size: 14px;
+			family: "Roboto";
+			weight: 300;
+		}
+		margin: {
+			left: 42px;
+			top: 74px;
+		}
+		line-height: 1.714;
+	}
+}

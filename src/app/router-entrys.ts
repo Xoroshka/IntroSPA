@@ -6,7 +6,7 @@ export const router_entrys = [
     },
     {
         name: 'Заявки',
-        path: '/requests',
+        path: '/tasks',
         icon: 'requests.png',
     },
     {

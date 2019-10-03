@@ -10,7 +10,7 @@ import { WorkersComponent } from './workers/workers.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DocsComponent } from './docs/docs.component';
 import { ActivesComponent } from './actives/actives.component';
-import { RequestsModule } from './requests/requests.module';
+import { TasksModule } from './tasks/tasks.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { RequestsModule } from './requests/requests.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RequestsModule,
+    TasksModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],

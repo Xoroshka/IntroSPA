@@ -1,0 +1,148 @@
+@import "../tasks-style.scss";
+
+.header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 60px;
+	background-color: #18436f;
+	color: white;
+	padding: 0 25px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.id {
+	font-family: Myriad Pro, serif;
+	font-size: 18px;
+	white-space: nowrap;
+}
+
+.name {
+	font-family: Roboto, serif;
+	font-weight: 300;
+	font-size: 16px;
+	margin-left: 25px;
+}
+.close {
+	margin-left: auto;
+	button {
+		background: initial;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		padding: 6px;
+		outline: 0;
+		border: none;
+		img {
+			vertical-align: middle;
+		}
+	}
+}
+
+.container {
+	position: absolute;
+	left: 0;
+	top: 60px;
+	right: 0;
+	bottom: 0;
+	background-color: #ecf3f7;
+	font-size: 14px;
+	white-space: pre-wrap;
+	word-break: break-all;
+	> * {
+		padding: 28px 30px;
+	}
+}
+
+.title {
+	display: block;
+	font-family: "Ubuntu";
+	color: rgb(159, 158, 167);
+	margin-bottom: 10px;
+}
+
+*:not(:first-child).title {
+	margin-top: 30px;
+}
+
+.left {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 240px;
+	bottom: 0;
+	overflow: hidden;
+}
+
+.left-main {
+	margin-left: 8px;
+}
+
+.right {
+	box-sizing: border-box;
+	width: 240px;
+	border-left: 1px solid #d7dce0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+.description {
+	font-family: "Roboto";
+	font-weight: 300;
+	color: rgb(6, 6, 6);
+	line-height: 1.286;
+	text-align: left;
+}
+
+.comment{
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+	background-color: rgb(249, 249, 250);
+	padding: 10px;
+	box-sizing: border-box;
+	div{
+	}
+	div textarea{
+		resize: none;
+		outline: none;
+		overflow: hidden;
+		font: 400 13px "Ubuntu";
+    	font-weight: 500;
+		color: #404147;
+		background: none;
+		padding: 0;
+		border: none;
+		width: 100%;
+		vertical-align: top;
+		box-sizing: border-box;
+
+
+
+	}
+    
+}
+
+.save {
+	@include btn(150px, 36px);
+	margin-left: 4px;
+	margin-top: 40px;
+}
+
+.status {
+	select {
+		border: none;
+		background: initial;
+		outline: none;
+		option {
+			// background-color: rgba($color: #000000, $alpha: 0);
+		}
+	}
+}

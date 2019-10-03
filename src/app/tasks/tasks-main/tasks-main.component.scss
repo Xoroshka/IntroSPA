@@ -1,4 +1,4 @@
-@import '../requests-style.scss';
+@import '../tasks-style.scss';
 
 .search {
   background-color: #d1e0ed;
@@ -14,9 +14,6 @@
   flex-direction: row;
   align-items: center;
   white-space: nowrap;
-  ::placeholder {
-    color: #ced6e2;
-  }
   box-shadow: 0px 0px 7px 0px rgba($color: #000000, $alpha: 0.2);
   & input {
     border: 1px solid #45abff;
@@ -157,12 +154,12 @@ cdk-cell {
     box-sizing: border-box;
     background-color: #ecf3f7;
     top: 0;
-    right: 0;
+    right: -975px;
     bottom: 0;
     width: 975px;
     z-index: 150;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-    border-left: 1px solid rgb(215, 220, 224);;
+    border-left: 1px solid rgb(215, 220, 224);
 }
 
 

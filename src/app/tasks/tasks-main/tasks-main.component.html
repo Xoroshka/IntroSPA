@@ -6,14 +6,14 @@
 
     <div class="content">
 
-        <button class="add_request" routerLink="/requests/add">Создать заявку</button>
+        <button class="add_request" routerLink="/tasks/add">Создать заявку</button>
 
-        <cdk-table [dataSource]="tasks$| async">
+        <cdk-table [dataSource]="(service.getTasks()|async)" [trackBy]="trackByTaskId">
 
             <ng-container cdkColumnDef="priority">
                 <cdk-header-cell *cdkHeaderCellDef></cdk-header-cell>
                 <cdk-cell *cdkCellDef="let task">
-                    <div [ngStyle]='{"background-color":getPriorityRGB(task.priorityId)}'></div>
+                    <div [ngStyle]='{"background-color": task.priority.rgb}'></div>
                 </cdk-cell>
             </ng-container>
 
@@ -30,25 +30,25 @@
             <ng-container cdkColumnDef="status">
                 <cdk-header-cell *cdkHeaderCellDef> Статус </cdk-header-cell>
                 <cdk-cell *cdkCellDef="let task">
-                    <div [ngStyle]='{"background-color": task.statusRgb}'>{{task.statusName}}</div>
+                    <div [ngStyle]='{"background-color": task.status.rgb}'>{{task.status.name}}</div>
                 </cdk-cell>
             </ng-container>
 
-            <ng-container cdkColumnDef="executorName">
+            <ng-container cdkColumnDef="executor">
                 <cdk-header-cell *cdkHeaderCellDef> Исполнитель </cdk-header-cell>
-                <cdk-cell *cdkCellDef="let task"> {{task.executorName}} </cdk-cell>
+                <cdk-cell *cdkCellDef="let task"> {{task.executor.name}} </cdk-cell>
             </ng-container>
 
-            <cdk-header-row *cdkHeaderRowDef="['priority', 'id', 'name', 'status', 'executorName']; sticky: true">
+            <cdk-header-row *cdkHeaderRowDef="['priority', 'id', 'name', 'status', 'executor']; sticky: true">
             </cdk-header-row>
-            <cdk-row *cdkRowDef="let request; columns: ['priority', 'id', 'name', 'status', 'executorName']"
-                [routerLink]="['/requests/edit', request.id]"></cdk-row>
+            <cdk-row *cdkRowDef="let task; columns: ['priority', 'id', 'name', 'status', 'executor']"
+                [routerLink]="['/tasks/edit', task.id]"></cdk-row>
         </cdk-table>
 
     </div>
 
-    <div class="router_box" [@routerAnimations]="isOpen(outlet) ? 'open' : 'closed'" >
-        <router-outlet #outlet="outlet" ></router-outlet>
+    <div class="router_box" [@routerAnimations]="isOpen(outlet) ? 'open' : 'closed'">
+        <router-outlet #outlet="outlet"></router-outlet>
     </div>
 
 </div>

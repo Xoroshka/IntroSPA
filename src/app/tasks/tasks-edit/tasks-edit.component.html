@@ -1,0 +1,33 @@
+<div *ngIf="(task$ | async) as task" class="root">
+	<div class="header">
+		<div class="id">№ {{task.id}}</div>
+		<div class="name">{{task.name}}</div>
+		<div class=close><button routerLink="/tasks"><img src="/assets/images/close.png"></button></div>
+	</div>
+
+	<div class="container">
+		<div class="left">
+			<div class="left-main">
+				<div class="description">
+					<span>Описание</span>
+					<p>{{task.description}}</p>
+				</div>
+				<div class="comment">
+					<div>
+						<textarea cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" placeholder="Комментарий"></textarea>
+					</div>
+				</div>
+			</div>
+			<button class="save">Сохранить</button>
+
+		</div>
+		<div class="right">
+			<div class="status">
+				<div class="status-item">
+					<div class="status-item-color"></div> 
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

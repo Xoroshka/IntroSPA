@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'clients', component: ClientsComponent },
   { path: 'actives', component: ActivesComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: '', redirectTo: '/requests', pathMatch: 'full' },
+  { path: '', redirectTo: '/tasks', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -1,20 +1,9 @@
-export const tenantguid: string = '08de793c-0ca7-4339-ae2e-8bb6fdc063ab';
-export const baseURL: string = 'http://intravision-task.test01.intravision.ru';
+import {IdName} from './id-name.interface';
 
-export enum RequestTypes {
-    get,
-    post,
-    put,
-    delete,
-    patch,
-    head,
-    options
-}
-
-export interface taskModel {
-    id?: number;
-    name?: string;
-    description?: string;
+export interface GetTask {
+    id: number;
+    name: string;
+    description: string;
     createdAt?: Date;
     updatedAt?: Date;
     price?: number;
@@ -28,14 +17,14 @@ export interface taskModel {
     serviceId?: number;
     serviceName?: string;
     resolutionDatePlan?: Date;
-    tags?: Array<tagModel>;
+    tags?: IdName[];
     initiatorId?: number;
     initiatorName?: string;
     executorId?: number;
     executorName?: string;
     executorGroupId?: number;
     executorGroupName?: string;
-    lifetimeItems?: Array<lifetimeItemModel>;
+    lifetimeItems?: lifetimeItemModel[];
 }
 
 export interface lifetimeItemModel{
@@ -47,15 +36,4 @@ export interface lifetimeItemModel{
     fieldName: string;
     oldFieldValue: string;
     newFieldValue: string
-}
-
-export interface tagModel{
-    id: number;
-    name: string;
-}
-
-export interface priorityModel{
-    rgb: string;
-    id: number;
-    name: string;
 }
