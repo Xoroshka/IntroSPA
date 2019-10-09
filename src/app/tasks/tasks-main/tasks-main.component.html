@@ -6,7 +6,8 @@
 
     <div class="content">
 
-        <button class="add_request" routerLink="/tasks/add">Создать заявку</button>
+        <button class="add_task" (click)="setForm(0)">Создать заявку</button>
+        {{taskId|async}}
 
         <cdk-table [dataSource]="(service.getTasks()|async)" [trackBy]="trackByTaskId">
 
@@ -42,13 +43,13 @@
             <cdk-header-row *cdkHeaderRowDef="['priority', 'id', 'name', 'status', 'executor']; sticky: true">
             </cdk-header-row>
             <cdk-row *cdkRowDef="let task; columns: ['priority', 'id', 'name', 'status', 'executor']"
-                [routerLink]="['/tasks/edit', task.id]"></cdk-row>
+                (click)="setForm(task.id)"></cdk-row>
         </cdk-table>
 
     </div>
 
-    <div class="router_box" [@routerAnimations]="isOpen(outlet) ? 'open' : 'closed'">
-        <router-outlet #outlet="outlet"></router-outlet>
+    <div class="form_box" *ngIf="formOpen" [@formAnimation]="formOpen">
+        <app-tasks-form [id]="taskId"></app-tasks-form>
     </div>
 
 </div>

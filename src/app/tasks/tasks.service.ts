@@ -10,7 +10,7 @@ import { OData} from './interfaces/odata.interface';
 import { Task } from './interfaces/task.interface';
 import { TaskModel } from './interfaces/task.model';
 import { zip, forkJoin } from 'rxjs'
-import { map, shareReplay, takeUntil } from 'rxjs/operators';
+import { map, shareReplay, takeUntil, switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class TasksService {
@@ -65,8 +65,8 @@ export class TasksService {
         return this.http.post<number>(`${this.baseURL}/api/${this.tenantguid}/Tasks`, task);
     }
 
-    getTask(id: number): Observable<GetTask>{
-        return this.http.get<GetTask>(`${this.baseURL}/api/${this.tenantguid}/Tasks/${id}`);
+    getTask(id: Observable<number>): Observable<GetTask>{
+        return id.pipe(switchMap(id => this.http.get<GetTask>(`${this.baseURL}/api/${this.tenantguid}/Tasks/${id}`)));
     }
 
     getPriorities(): Observable<RgbIdName[]>{

@@ -47,7 +47,7 @@
   height: 100%;
 }
 
-.add_request {
+.add_task {
   @include btn(180px, 40px);
   margin-left: 262px;
   margin-top: 25px;
@@ -149,7 +149,7 @@ cdk-cell {
   }
 }
 
-.router_box {
+.form_box {
     position: absolute;
     box-sizing: border-box;
     background-color: #ecf3f7;
