@@ -2,7 +2,7 @@
 	<ng-container *ngSwitchCase="false">
 		<div class="head">
 			<h1>Новая заявка</h1>
-			<button routerLink="/tasks"><img src="/assets/images/close.png"></button>
+			<button (click)="toClose()"><img src="/assets/images/close.png"></button>
 		</div>
 
 		<div class="container">
@@ -19,7 +19,7 @@
 			<div class="header">
 				<div class="id">№ {{task.id}}</div>
 				<div class="name">{{task.name}}</div>
-				<div class=close><button routerLink="/tasks"><img src="/assets/images/close.png"></button></div>
+				<div class=close><button (click)="toClose()"><img src="/assets/images/close.png"></button></div>
 			</div>
 
 			<div class="container">

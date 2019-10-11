@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GetTask } from '../interfaces/get-task.interface';
 import { SendTask } from '../interfaces/send-task.interface';
 import { TasksService } from '../tasks.service';
@@ -13,6 +13,7 @@ import { map } from 'rxjs/operators';
 export class TasksFormComponent implements OnInit {
 
   @Input('id') taskId$: Observable<number>;
+  @Output() close = new EventEmitter<void>();
 
   constructor(
     private service: TasksService
@@ -26,6 +27,10 @@ export class TasksFormComponent implements OnInit {
       if (id) { return this.service.getTask(id) }
       return null;
     })
+  }
+
+  toClose(){
+    this.close.emit();
   }
 
 
